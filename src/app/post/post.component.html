@@ -1,0 +1,39 @@
+<div style="border: 3px solid grey; padding: 15px 15px 30px 15px;">
+  <h4>
+    <strong>{{ post?.title }}</strong>
+  </h4>
+
+  <div>
+    <p align="justify">
+      {{ post?.description }}
+    </p>
+
+    <img
+      src="{{ post?.imgUrl }}"
+      alt="nature-img"
+      class="img-responsive"
+    /><br />
+
+    <span style="color: grey">Author: {{ post?.author }} </span><br />
+    <span style="color: grey"> {{ post?.datetimeCreated }} </span><br />
+    <br />
+
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <a class="btn btn-info btn-lg" (click)="likePost()">
+            <span class="glyphicon glyphicon-thumbs-up"></span> Like
+            <span *ngIf="post?.noOfLikes != 0">({{ post?.noOfLikes }})</span>
+          </a>
+        </td>
+
+        <td align="right">
+          <button class="btn btn-success" (click)="editPost()">Edit</button> |
+          <button class="btn btn-danger" (click)="delPost()">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<br />
+<br />
